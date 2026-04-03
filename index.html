@@ -4,14 +4,26 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>API Docs</title>
-    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
-    <style>
-      html, body { margin: 0; padding: 0; height: 100%; }
-      #status { padding: 16px; font-family: Arial, sans-serif; }
-    </style>
   </head>
   <body>
-    <div id="status">Als je dit blijft zien, laadt ReDoc of openapi.yaml niet correct.</div>
-    <redoc spec-url="./openapi.yaml"></redoc>
+    <div id="status">Pagina geladen</div>
+
+    <script>
+      document.getElementById("status").innerText += " | script start";
+    </script>
+
+    <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
+
+    <script>
+      document.getElementById("status").innerText += " | redoc script geladen";
+
+      Redoc.init('./openapi.yaml', {}, document.body.appendChild(document.createElement('div')), function(err) {
+        if (err) {
+          document.getElementById("status").innerText += " | FOUT: " + err;
+        } else {
+          document.getElementById("status").innerText += " | ok";
+        }
+      });
+    </script>
   </body>
 </html>

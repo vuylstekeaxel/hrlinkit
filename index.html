@@ -1,24 +1,17 @@
-<html>
-
-<head>
+<!doctype html>
+<html lang="nl">
+  <head>
     <meta charset="utf-8" />
-    <title>API Documentation</title>
-    <!-- Responsive -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- ReDoc -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>API Docs</title>
     <script src="https://cdn.redoc.ly/redoc/latest/bundles/redoc.standalone.js"></script>
-
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
+      html, body { margin: 0; padding: 0; height: 100%; }
+      #status { padding: 16px; font-family: Arial, sans-serif; }
     </style>
-</head>
-
-<body>
-    <redoc spec-url="openapi.yaml"></redoc>
-</body>
-
+  </head>
+  <body>
+    <div id="status">Als je dit blijft zien, laadt ReDoc of openapi.yaml niet correct.</div>
+    <redoc spec-url="./openapi.yaml"></redoc>
+  </body>
 </html>
